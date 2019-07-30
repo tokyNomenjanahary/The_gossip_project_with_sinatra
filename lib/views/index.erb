@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>The Gossip Project</title>
+</head>
+<body style="background: rgba(255, 0, 0, 0.3);">
+	<div style="margin: auto; text-align: center; border: solid 5px; border-radius: 10px; width: 400px; background: rgba(255, 0, 0, 0.1);">
+		<h1>Mon super site de gossip, depuis le dossier views !</h1>
+		<p>Bienvenue à vous moussaillon !</p>
+		<p>La litse des potins arrivent bientôt....</p>
+			<% i = 0 %>
+		<% gossips.each do |gossip| %>
+			<p style="background: #FFFFFF; width: 300px;margin: auto auto 5px auto; border: 1px solid; border-radius: 10px">
+			<a href="/gossips/<%= i %>/" style="text-decoration: none; font-size: 20px; font-style: italic;" ><%= gossip.author %></a><%= " : " %></br>
+				<%= gossip.content %>
+				<% i += 1 %>
+			</p>
+		<% end %>
+		<p>En attendant vous pouvez poster des nouveau potins !! <a href="/gossips/new/">postez</a> </p>
+	</div>
+</body>
+</html>
